@@ -13,7 +13,7 @@ print(f"Check corretly or not I remeber your login "
 global agree
 agree = input("'yes' or 'no': ")
 
-if agree == "yes":
+if agree.lower() == "yes":
     with open("l_and_p.txt", "w") as d:
         print(f"Location: {location}", file=d)
         print(f"Login: {name}", file=d)
@@ -21,15 +21,15 @@ if agree == "yes":
     print("All recorded")
 
 
-while agree != "yes":
+while agree.lower() != "yes":
     agree = input("'yes' or 'no': ")
-    if agree == "yes":
+    if agree.lower() == "yes":
         with open("l_and_p.txt", "w") as d:
             print(f"Location: {location}", file=d)
             print(f"Login: {name}", file=d)
             print(f"Password: {password}", file=d)
         print("All recorded")
-    elif agree == "no":
+    elif agree.lower() == "no":
         location = input("Where you use that Login and Password: ")
         name = input("Input your login: ")
         password = getpass.getpass(prompt='Password: ', stream=None)
